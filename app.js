@@ -7,11 +7,11 @@ const compression = require('compression');
 const corsOption = {
     origin: ['http://localhost:3000'],
 };
-app.use(cors(corsOption));
+
 const app = express();
 app.use(compression())
 app.use(express.json());
-
+app.use(cors(corsOption));
 app.use('/user', userRouter);
 app.use('/order', orderRouter);
 app.use('/',(req,res)=>{
