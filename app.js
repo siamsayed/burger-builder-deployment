@@ -4,7 +4,10 @@ const userRouter = require('./routers/userRouter');
 const orderRouter = require('./routers/orderRouter');
 const compression = require('compression');
 
-app.use(cors());
+const corsOption = {
+    origin: ['http://localhost:3000'],
+};
+app.use(cors(corsOption));
 const app = express();
 app.use(compression())
 app.use(express.json());
