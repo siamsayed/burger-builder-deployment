@@ -11,5 +11,8 @@ app.use(express.json());
 
 app.use('/user', userRouter);
 app.use('/order', orderRouter);
+app.use('/',(req,res)=>{
+res.send("hello world")
+})
 
 module.exports = app;
