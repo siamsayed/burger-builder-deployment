@@ -4,9 +4,9 @@ const userRouter = require('./routers/userRouter');
 const orderRouter = require('./routers/orderRouter');
 const compression = require('compression');
 
+app.use(cors());
 const app = express();
 app.use(compression())
-app.use(cors());
 app.use(express.json());
 
 app.use('/user', userRouter);
